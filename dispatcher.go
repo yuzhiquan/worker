@@ -4,6 +4,7 @@ type Dispatcher struct {
 	// A pool of workers channels that are registered with the dispatcher
 	WorkerPool chan chan Job
 }
+
 func NewDispatcher(maxWorkers int) *Dispatcher {
 	pool := make(chan chan Job, maxWorkers)
 	return &Dispatcher{WorkerPool: pool}
